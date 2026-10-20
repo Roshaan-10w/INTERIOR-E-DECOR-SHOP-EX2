@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior E-Decor Shop | Luxe Living</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: #fff;
+            padding: 30px 15px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #1b1b1b;
+            border: 1px solid #c9a646;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(201,166,70,.12);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #080808;
+            border-bottom: 2px solid #c9a646;
+        }
+
+        .logo {
+            color: #c9a646;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        h1 span {
+            color: #c9a646;
+        }
+
+        header p {
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .section-title {
+            color: #c9a646;
+            font-family: Georgia, serif;
+            font-weight: normal;
+            font-size: 21px;
+            margin: 15px 0 22px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            min-width: 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label, .group-label {
+            color: #eee;
+            font-size: 14px;
+        }
+
+        .required {
+            color: #c9a646;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]):not([type="file"]),
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #101010;
+            color: #fff;
+            border: 1px solid #484848;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #c9a646;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+
+        select option {
+            background: #101010;
+        }
+
+        input[type="file"] {
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        input[type="color"] {
+            width: 65px;
+            height: 42px;
+            padding: 3px;
+            background: #101010;
+            border: 1px solid #c9a646;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: #c9a646;
+            margin-right: 7px;
+            cursor: pointer;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #c9a646;
+            cursor: pointer;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 5px;
+        }
+
+        .options label {
+            display: inline-flex;
+            align-items: center;
+            color: #ccc;
+        }
+
+        textarea {
+            min-height: 95px;
+            resize: vertical;
+        }
+
+        .range-value {
+            color: #c9a646;
+            font-size: 13px;
+        }
+
+        .terms {
+            margin-top: 25px;
+        }
+
+        .terms label {
+            line-height: 1.8;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .submit-btn {
+            background: #c9a646;
+            color: #111;
+            border: 1px solid #c9a646;
+        }
+
+        .submit-btn:hover {
+            background: #e2c46d;
+        }
+
+        .reset-btn {
+            background: transparent;
+            color: #c9a646;
+            border: 1px solid #c9a646;
+        }
+
+        .reset-btn:hover {
+            background: #29230f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px 15px;
+            color: #888;
+            font-size: 12px;
+            line-height: 1.8;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            form {
+                padding: 20px 15px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">LUXE LIVING</div>
+        <h1>Interior <span>E-Decor</span> Shop</h1>
+        <p>Transform your space into something extraordinary.</p>
+        <p>Customer Registration & Interior Design Preferences</p>
+    </header>
+
+    <form id="registrationForm" action="success.html" method="get">
+
+        <h2 class="section-title">01. Personal Information</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name"
+                       pattern="[A-Za-z ]{3,50}"
+                       title="Enter 3 to 50 letters and spaces"
+                       minlength="3" maxlength="50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email"
+                       placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Create Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password"
+                       placeholder="Minimum 8 characters"
+                       minlength="8" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="10-digit mobile number"
+                       pattern="[0-9]{10}" maxlength="10"
+                       title="Enter exactly 10 digits" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age"
+                       min="18" max="100" placeholder="Enter your age">
+            </div>
+
+            <div class="form-group full-width">
+                <span class="group-label">Gender</span>
+                <div class="options">
+                    <label><input type="radio" name="gender" value="Male">Male</label>
+                    <label><input type="radio" name="gender" value="Female">Female</label>
+                    <label><input type="radio" name="gender" value="Other">Other</label>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">02. Interior Design Preferences</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="room">Room Type <span class="required">*</span></label>
+                <select id="room" name="room" required>
+                    <option value="">Select a room</option>
+                    <option>Living Room</option>
+                    <option>Bedroom</option>
+                    <option>Kitchen</option>
+                    <option>Dining Room</option>
+                    <option>Bathroom</option>
+                    <option>Home Office</option>
+                    <option>Full Home</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="style">Preferred Interior Style <span class="required">*</span></label>
+                <select id="style" name="style" required>
+                    <option value="">Choose your style</option>
+                    <option>Modern</option>
+                    <option>Minimalist</option>
+                    <option>Luxury</option>
+                    <option>Traditional</option>
+                    <option>Industrial</option>
+                    <option>Scandinavian</option>
+                    <option>Bohemian</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Estimated Budget (₹) <span class="required">*</span></label>
+                <select id="budget" name="budget" required>
+                    <option value="">Select your budget</option>
+                    <option>Below ₹25,000</option>
+                    <option>₹25,000 – ₹50,000</option>
+                    <option>₹50,000 – ₹1,00,000</option>
+                    <option>₹1,00,000 – ₹5,00,000</option>
+                    <option>Above ₹5,00,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery">Preferred Delivery Date</label>
+                <input type="date" id="delivery" name="delivery">
+            </div>
+
+            <div class="form-group full-width">
+                <span class="group-label">Products of Interest</span>
+                <div class="options">
+                    <label><input type="checkbox" name="products" value="Furniture">Furniture</label>
+                    <label><input type="checkbox" name="products" value="Lighting">Lighting</label>
+                    <label><input type="checkbox" name="products" value="Wall Decor">Wall Decor</label>
+                    <label><input type="checkbox" name="products" value="Curtains">Curtains</label>
+                    <label><input type="checkbox" name="products" value="Rugs">Rugs & Carpets</label>
+                    <label><input type="checkbox" name="products" value="Accessories">Accessories</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Favourite Theme Colour</label>
+                <input type="color" id="color" name="color" value="#c9a646">
+            </div>
+
+            <div class="form-group">
+                <label for="inspiration">Upload Room Inspiration</label>
+                <input type="file" id="inspiration" name="inspiration"
+                       accept="image/*,.pdf">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="assistance">Design Assistance Required</label>
+                <input type="range" id="assistance" name="assistance"
+                       min="0" max="100" value="50">
+                <span class="range-value" id="rangeValue">50% assistance</span>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="address">Delivery Address <span class="required">*</span></label>
+                <textarea id="address" name="address" rows="3"
+                          placeholder="Enter your complete delivery address"
+                          required></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message">Additional Requirements</label>
+                <textarea id="message" name="message" rows="4"
+                          placeholder="Describe your dream space and special requirements..."></textarea>
+            </div>
+
+        </div>
+
+        <div class="terms">
+            <label>
+                <input type="checkbox" name="terms" value="accepted" required>
+                I confirm that the information provided is correct.
+                <span class="required">*</span>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="submit-btn">SUBMIT REGISTRATION</button>
+            <button type="reset" class="reset-btn">RESET FORM</button>
+        </div>
+
+    </form>
+
+    <footer>
+        LUXE LIVING · INTERIOR E-DECOR SHOP<br>
+        Design your space. Define your style.
+    </footer>
+
+</div>
+
+<script>
+    const assistance = document.getElementById("assistance");
+    const rangeValue = document.getElementById("rangeValue");
+
+    assistance.addEventListener("input", function () {
+        rangeValue.textContent = this.value + "% assistance";
+    });
+
+    // Prevent selecting a past delivery date.
+    const today = new Date();
+    const localToday = new Date(
+        today.getTime() - today.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0];
+
+    document.getElementById("delivery").min = localToday;
+
+    // The browser validates required fields before opening success.html.
+    document.getElementById("registrationForm").addEventListener(
+        "submit",
+        function (event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                this.reportValidity();
+            }
+        }
+    );
+</script>
+
+</body>
+</html>
